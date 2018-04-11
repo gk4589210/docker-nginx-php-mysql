@@ -12,4 +12,14 @@ services:
     ports:
       - "8000:80"
     restart: always
+    depends_on:
+      - php
     command: ["nginx-debug", "-g", "daemon off;"]
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile.php
+    restart: always
+    volumes:
+      - "./back/public:/var/www/html/public/api"
+      - "./back/app:/var/www/html/app"
