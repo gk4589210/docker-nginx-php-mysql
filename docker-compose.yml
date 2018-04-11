@@ -14,6 +14,7 @@ services:
     restart: always
     depends_on:
       - php
+      - mysql
     command: ["nginx-debug", "-g", "daemon off;"]
   php:
     build:
@@ -28,3 +29,15 @@ services:
     volumes:
       - "./back/app:/app"
     command: install
+  mysql:
+    image: mysql
+    restart: always
+    env_file:
+      - ".env"
+    volumes:
+      - "./data/db/mysql:/var/lib/mysql"
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
