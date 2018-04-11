@@ -23,3 +23,8 @@ services:
     volumes:
       - "./back/public:/var/www/html/public/api"
       - "./back/app:/var/www/html/app"
+  composer:
+    image: "composer"
+    volumes:
+      - "./back/app:/app"
+    command: install
