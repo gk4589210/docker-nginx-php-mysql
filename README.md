@@ -18,7 +18,7 @@ https://github.com/99linesofcode/playground-laravel
 ### Production
 The NGINX container is configured to build and deploy your front end code automatically. You can safely remove the shared volume on ` line 11` of the `docker-compose.yml` file in production environments. None of the source files for your React.Js application are copied to the Docker container.
 
-For security purposes, the back-end code lives in an inaccessible location on the server,outside the public directory (`/var/www/hmtl/app`). It can only be accessed through the exposed `index.php` file that lives in `/var/www/hmtl/public/api/`.
+For security purposes, the back-end code lives in an inaccessible location on the server, outside the public directory (`/var/www/hmtl/app`). It can only be accessed through the exposed `index.php` file that lives in `/var/www/hmtl/public/api/`.
 
 ### Contributing
 We encourage you to contribute to this repository by opening issues and submitting pull requests. In order to submit a PR, simply:
