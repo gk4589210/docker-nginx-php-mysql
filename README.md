@@ -27,3 +27,7 @@ For security purposes, the back-end code lives in an inaccessible location on th
 1. Commit it
 1. Push it
 1. PR it
+
+### License
+
+Docker-NGINX-PHP-MySQL is licensed under the [MIT license](https://opensource.org/licenses/MIT)
