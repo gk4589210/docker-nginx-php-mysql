@@ -21,12 +21,13 @@ The NGINX container is configured to build and deploy your front end code automa
 For security purposes, the back-end code lives in an inaccessible location on the server,outside the public directory (`/var/www/hmtl/app`). It can only be accessed through the exposed `index.php` file that lives in `/var/www/hmtl/public/api/`.
 
 ### Contributing
+We encourage you to contribute to this repository by opening issues and submitting pull requests. In order to submit a PR, simply:
 
-1. Fork it
-1. Branch it
-1. Commit it
-1. Push it
-1. PR it
+1. Fork 
+1. Branch
+1. Commit
+1. Push
+1. PR
 
 ### License
 
