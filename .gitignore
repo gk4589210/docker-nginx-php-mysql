@@ -4,14 +4,19 @@
 .DS_STORE
 
 # -----------------------------------------------------------------------------
+# integrated development environments
+# -----------------------------------------------------------------------------
+.idea
+
+# -----------------------------------------------------------------------------
 # application
 # -----------------------------------------------------------------------------
-front/package.json
-front/yarn.lock
+/front/package.json
+/front/yarn.lock
 
-front/public
-front/node_modules
+/front/public
+/front/node_modules
 
-back/app/composer.json
-back/app/vendor
-data
+/back/app/composer.json
+/back/app/vendor
+/data
