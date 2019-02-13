@@ -7,11 +7,17 @@ LABEL maintainer="jordy@schreuders.it"
 
 WORKDIR /usr/src/front
 
-COPY front/package.json front/yarn.lock ./
-RUN yarn
-
+# I'm copying all files that live under front/ such that it works with any of
+# the RUN commands below. If you would like to optimize this bit to save a little
+# bit of build time it is probably best to be more specific and just COPY necessities.
 COPY front/ ./
-RUN yarn build
+
+# React.js - The react-scripts build command outputs to the front/build directory by default.
+# RUN yarn && yarn build
+
+# Angular CLI - Requires us to define the output path through an options parameter if we wish
+# to change the output directory for the bundled, minized and production ready code. 
+RUN yarn && yarn build --output-path="build" --prod
 
 
 # -----------------------------------------------------------------------------
@@ -19,4 +25,5 @@ RUN yarn build
 # -----------------------------------------------------------------------------
 FROM nginx:alpine
 
-COPY --from=build-deps /usr/src/front/public /var/www/html/public/
+# The line below copies the output from the build command from front/build into the NGINX container.
+COPY --from=build-deps /usr/src/front/build/ /var/www/html/public/
